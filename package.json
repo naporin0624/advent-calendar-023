@@ -20,15 +20,20 @@
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
-    "test:e2e": "jest --config ./test/jest-e2e.json"
+    "test:e2e": "jest --config ./test/jest-e2e.json",
+    "typeorm": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js"
   },
   "dependencies": {
     "@nestjs/common": "^6.7.2",
     "@nestjs/core": "^6.7.2",
     "@nestjs/platform-express": "^6.7.2",
     "@nestjs/serve-static": "^1.0.2",
+    "@nestjs/typeorm": "^6.2.0",
     "babel-polyfill": "^6.26.0",
+    "class-transformer": "^0.2.3",
+    "class-validator": "^0.11.0",
     "html-webpack-plugin": "^3.2.0",
+    "mysql": "^2.17.1",
     "npm-run-all": "^4.1.5",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
@@ -36,6 +41,7 @@
     "rimraf": "^3.0.0",
     "rxjs": "^6.5.3",
     "styled-components": "^4.4.1",
+    "typeorm": "^0.2.22",
     "webpack-node-externals": "^1.7.2"
   },
   "devDependencies": {

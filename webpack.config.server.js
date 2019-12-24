@@ -1,5 +1,7 @@
 const webpack = require("webpack");
-const path = require("path");
+const {
+    join
+} = require("path");
 const nodeExternals = require("webpack-node-externals");
 
 module.exports = {
@@ -23,10 +25,13 @@ module.exports = {
     },
     resolve: {
         extensions: [".tsx", ".ts", ".js"],
+        alias: {
+            "@": join(__dirname, "./")
+        }
     },
     plugins: [new webpack.HotModuleReplacementPlugin()],
     output: {
-        path: path.join(__dirname, "dist"),
+        path: join(__dirname, "dist"),
         filename: "server.js",
     },
 };

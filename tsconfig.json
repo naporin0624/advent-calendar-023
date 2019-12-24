@@ -8,13 +8,17 @@
     "target": "esnext",
     "sourceMap": true,
     "outDir": "./dist",
-    "baseUrl": "./",
     "incremental": true,
     "esModuleInterop": true,
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "jsx": "react",
     "types": ["react", "node"],
-    "allowJs": true
+    "allowJs": true,
+    "resolveJsonModule": true,
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["./*"]
+    }
   },
   "include": ["src", "client"],
   "exclude": ["node_modules", "dist", "test", "**/*.spec.ts"]

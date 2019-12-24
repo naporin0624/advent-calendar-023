@@ -7,6 +7,9 @@ module.exports = {
   entry: ['./client/App.tsx', 'babel-polyfill'],
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx'],
+    alias: {
+      "@": join(__dirname, "./")
+    }
   },
   module: {
     rules: [{
