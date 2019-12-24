@@ -6,6 +6,7 @@ import { ClientModule } from './client/client.module';
 import config from '@/webpack.config.client.js';
 import { Configuration } from 'webpack';
 import { getMetadataArgsStorage } from 'typeorm';
+import { UserModule } from './user/user.module';
 import ormConfig from '@/ormconfig.json';
 
 const { cli, migrations, ...typeOrmConfig } = {
@@ -21,6 +22,7 @@ const { cli, migrations, ...typeOrmConfig } = {
       webpackConfig: config as Configuration,
     }),
     TypeOrmModule.forRoot(typeOrmConfig as TypeOrmModuleOptions),
+    UserModule,
   ],
   controllers: [AppController],
   providers: [AppService],
