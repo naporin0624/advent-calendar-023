@@ -1,5 +1,7 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-const { join } = require('path');
+const {
+  join
+} = require('path');
 const htmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
@@ -8,38 +10,31 @@ module.exports = {
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx'],
     alias: {
-      '@': join(__dirname, './'),
+      '@': process.cwd(),
     },
   },
   module: {
-    rules: [
-      {
+    rules: [{
         test: /\.(png|jpe?g|gif)$/i,
         exclude: /node_modules/,
-        use: [
-          {
-            loader: 'file-loader',
-          },
-        ],
+        use: [{
+          loader: 'file-loader',
+        }, ],
       },
       {
         test: /\.json$/,
         exclude: /node_modules/,
         type: 'javascript/auto',
-        use: [
-          {
-            loader: 'json-loader',
-          },
-        ],
+        use: [{
+          loader: 'json-loader',
+        }, ],
       },
       {
         test: /\.ts(x?)$/,
         exclude: /node_modules/,
-        use: [
-          {
-            loader: 'ts-loader',
-          },
-        ],
+        use: [{
+          loader: 'ts-loader',
+        }, ],
       },
     ],
   },

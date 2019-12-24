@@ -20,6 +20,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["src", "client"],
+  "include": ["src", "client", "apis"],
   "exclude": ["node_modules", "dist", "test", "**/*.spec.ts"]
 }
