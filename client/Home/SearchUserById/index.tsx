@@ -19,8 +19,8 @@ export const SearchUserById = () => {
       <InputContainer>
         <Label>UserId</Label>
         <Input
-          type="number"
-          min="1"
+          type='number'
+          min='1'
           onChange={e => setUserId(parseInt(e.currentTarget.value, 10))}
         />
       </InputContainer>

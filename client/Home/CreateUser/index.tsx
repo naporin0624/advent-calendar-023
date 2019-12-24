@@ -24,7 +24,7 @@ export const CreateUser = () => {
       <InputContainer>
         <Label>UserName</Label>
         <Input
-          type="text"
+          type='text'
           value={name}
           onChange={e => setName(e.currentTarget.value)}
         />
@@ -32,7 +32,7 @@ export const CreateUser = () => {
       <InputContainer>
         <Label>Password</Label>
         <Input
-          type="text"
+          type='text'
           value={password}
           onChange={e => setPassword(e.currentTarget.value)}
         />

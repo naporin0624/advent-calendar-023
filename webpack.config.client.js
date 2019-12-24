@@ -1,16 +1,16 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const {
-  join
-} = require('path');
-const htmlWebpackPlugin = require('html-webpack-plugin');
+  join,
+} = require("path");
+const htmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  mode: 'production',
-  entry: ['./client/App.tsx', 'babel-polyfill'],
+  mode: "production",
+  entry: ["./client/App.tsx", "babel-polyfill"],
   resolve: {
-    extensions: ['.ts', '.tsx', '.js', '.jsx'],
+    extensions: [".ts", ".tsx", ".js", ".jsx"],
     alias: {
-      '@': process.cwd(),
+      "@": process.cwd(),
     },
   },
   module: {
@@ -18,23 +18,23 @@ module.exports = {
         test: /\.(png|jpe?g|gif)$/i,
         exclude: /node_modules/,
         use: [{
-          loader: 'file-loader',
-        }, ],
+          loader: "file-loader",
+        } ],
       },
       {
         test: /\.json$/,
         exclude: /node_modules/,
-        type: 'javascript/auto',
+        type: "javascript/auto",
         use: [{
-          loader: 'json-loader',
-        }, ],
+          loader: "json-loader",
+        } ],
       },
       {
         test: /\.ts(x?)$/,
         exclude: /node_modules/,
         use: [{
-          loader: 'ts-loader',
-        }, ],
+          loader: "ts-loader",
+        } ],
       },
     ],
   },
@@ -43,21 +43,21 @@ module.exports = {
       cacheGroups: {
         vendors: {
           test: /node_modules/,
-          name: 'vendor',
+          name: "vendor",
           enforce: true,
-          chunks: 'all',
+          chunks: "all",
         },
       },
     },
   },
   plugins: [
     new htmlWebpackPlugin({
-      template: join(process.cwd(), 'public/index.html'),
+      template: join(process.cwd(), "public/index.html"),
     }),
   ],
   output: {
-    filename: 'js/[name]-[hash].js',
-    path: join(__dirname, 'dist/public'),
-    publicPath: '/',
+    filename: "js/[name]-[hash].js",
+    path: join(__dirname, "dist/public"),
+    publicPath: "/",
   },
 };
