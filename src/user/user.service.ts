@@ -10,9 +10,20 @@ export class UserService {
     @InjectRepository(User) private readonly userRepository: Repository<User>,
   ) {}
 
+  async findAllUser() {
+    return (await this.userRepository.find()).map(user => {
+      const { password, ...u } = user;
+      return u;
+    });
+  }
   async findById(id: number) {
-    const { password, ...user } = await this.userRepository.findOne(id);
-    return user;
+    const user = await this.userRepository.findOne(id);
+    if (user) {
+      const { password, ...u } = user;
+      return u;
+    } else {
+      return { id: null, name: null };
+    }
   }
 
   create(user: CreateUserDto) {

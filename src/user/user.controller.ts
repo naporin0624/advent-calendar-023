@@ -15,6 +15,11 @@ import { CreateUserDto } from './dto/createUserDto.dto';
 export class UserController {
   constructor(private readonly userService: UserService) {}
 
+  @Get()
+  async findAllUser() {
+    return await this.userService.findAllUser();
+  }
+
   @Get(':id')
   async findById(@Param('id') id: string) {
     return await this.userService.findById(parseInt(id, 10));
@@ -22,8 +27,7 @@ export class UserController {
 
   @Post()
   @UsePipes(ValidationPipe)
-  @HttpCode(204)
   async create(@Body() createUserDto: CreateUserDto) {
-    this.userService.create(createUserDto);
+    return this.userService.create(createUserDto);
   }
 }
