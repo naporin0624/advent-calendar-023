@@ -8,6 +8,7 @@ import { Configuration } from 'webpack';
 import { getMetadataArgsStorage } from 'typeorm';
 import { UserModule } from './user/user.module';
 import ormConfig from '@/ormconfig.json';
+import { join } from 'path';
 
 const { cli, migrations, ...typeOrmConfig } = {
   ...ormConfig,
@@ -18,7 +19,7 @@ const { cli, migrations, ...typeOrmConfig } = {
   imports: [
     ClientModule.forRoot({
       renderPath: '/',
-      rootPath: 'public',
+      rootPath: join(__dirname, 'public'),
       webpackConfig: config as Configuration,
     }),
     TypeOrmModule.forRoot(typeOrmConfig as TypeOrmModuleOptions),
