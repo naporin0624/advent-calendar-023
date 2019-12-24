@@ -21,6 +21,7 @@ export const SearchUserById = () => {
         <Input
           type='number'
           min='1'
+          value={userId}
           onChange={e => setUserId(parseInt(e.currentTarget.value, 10))}
         />
       </InputContainer>
