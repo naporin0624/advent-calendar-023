@@ -8,9 +8,9 @@ import { Configuration } from 'webpack';
 @Module({
   imports: [
     ClientModule.forRoot({
-      webpackConfig: config as Configuration,
       renderPath: '/',
       rootPath: 'public',
+      webpackConfig: config as Configuration,
     }),
   ],
   controllers: [AppController],
